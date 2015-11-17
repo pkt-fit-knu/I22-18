@@ -1,0 +1,47 @@
+CREATE DATABASE db1;
+\c db1
+
+CREATE TABLE student (
+student_id INT PRIMARY KEY,
+student_first_name text NOT NULL,
+student_last_name text NOT NULL,
+student_age INT NULL,
+CONSTRAINT positive_age CHECK(student_age>0),
+CHECK(student_id>0)
+);
+
+CREATE TABLE project (
+project_id INT PRIMARY KEY,
+project_name text NOT NULL UNIQUE,
+CHECK(project_id>0)
+);
+
+CREATE TABLE framework (
+framework_id INT PRIMARY KEY,
+framework_name text NOT NULL UNIQUE,
+CHECK(framework_id>0)
+);
+
+CREATE TABLE student_project (
+student_project INT PRIMARY KEY,
+student_id INT REFERENCES student(student_id),
+project_id INT REFERENCES project (project_id),
+UNIQUE(student_id,project_id),
+CHECK(student_id>0),
+CHECK(project_id>0)
+);
+
+CREATE TABLE work (
+work_id INT PRIMARY KEY,
+work_name text NOT NULL UNIQUE,
+student_id INT CHECK(student_id>0) UNIQUE,
+framework_id INT CHECK(framework_id>0),
+FOREIGN KEY (student_id) REFERENCES student(student_id)
+ON DELETE SET NULL
+ON UPDATE CASCADE,
+FOREIGN KEY (framework_id) REFERENCES framework(framework_id)
+ON DELETE SET NULL
+ON UPDATE CASCADE,
+CHECK(work_id>0)
+);
+
