@@ -1,0 +1,80 @@
+
+<!DOCTYPE HTML>
+<html>
+  <head>
+    
+  </head>
+  <body >
+  <input type=button value='Start' onclick='Main()' />
+    <canvas id="canvas" width="1340" height="630" style="border:1px solid red"></canvas>
+    <script>
+ 	function canvasTree(xoff,yoff,countYarus,yheight){
+	var xoff,yoff,yheight,countYarus,xweight,yweight;
+	this.xoff=xoff;
+	this.yoff=yoff;
+	this.countYarus=countYarus;
+	this.yheight=yheight;
+	
+	
+	var canvas = document.getElementById('canvas');
+      var ctx = canvas.getContext('2d');
+	  var grd = ctx.createLinearGradient(50,0,1340,580);
+		grd.addColorStop(0.0,'blue')
+		grd.addColorStop(0.15,'green')
+		grd.addColorStop(0.25,'yellow')
+		grd.addColorStop(0.35,'blue')
+		grd.addColorStop(0.5,'red')
+		grd.addColorStop(0.65,'yellow')
+		grd.addColorStop(0.70,'red')
+		grd.addColorStop(0.75,'pink')
+		grd.addColorStop(0.85,'black')
+		grd.addColorStop(1.0,'green')
+	  ctx.fillStyle=grd;
+////8455	
+
+		this.draw=function(){  
+	  var i=0;
+	  var k=1;
+	  for(i=0,k=1;i<countYarus;i++,k++){
+		xweight=29*k;
+		yweight=29*k;
+
+  yoff=yoff+20+yheight;
+  ctx.moveTo(130 + xoff, 88 + yoff);
+  ctx.bezierCurveTo(128 + xoff, 80 + yoff, 19-xweight + xoff, 109+yheight + yoff, 127 + xoff, yheight+107 + yoff);
+  ctx.moveTo(130 + xoff, 88 + yoff);
+  ctx.bezierCurveTo(128 + xoff, 80 + yoff, 241+yweight + xoff, yheight+109 + yoff, 127 + xoff, yheight+107 + yoff);  
+ // ctx.stroke();
+  ctx.fillStyle=grd;
+  ctx.fill();
+  
+
+			
+		}
+	  ctx.fillStyle = "rgb(112, 66, 20)";
+      ctx.fillRect(120+xoff,yheight+yoff+107,20,12);
+	}
+}
+  
+  function Main(){
+  //countTree всередині циклу, викликає функцію draw, де малюються деревця.
+   var r = Math.floor((Math.random() * 4) + 1);
+   var colorTop, colorBottom;
+   for(var i=0;i<r;i++)
+   {
+   var rY=Math.floor((Math.random()*300)+1)-20;
+   var rX=Math.floor((Math.random()*900)+1)-50;
+   var rYarus=Math.floor((Math.random()*7)+1);   
+   var rColorTop=Math.floor((Math.random()*6)+1);
+   var rColorBottom=Math.floor((Math.random()*6)+1);
+   var rYHeight=Math.floor((Math.random()*50)+1);
+
+   
+   var n=new canvasTree(rX,rY,rYarus,rYHeight);
+   n.draw();
+  }
+  }
+ 
+    </script>
+  </body>
+</html>      
