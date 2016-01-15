@@ -1,0 +1,117 @@
+<html>
+<head>
+</head>
+
+
+<input type=button value='Start' onclick='Main()' />
+
+<script type="text/javascript">
+function SVGPath(krona1,krona2,krona3,pen,colorKrona1,colorKrona2,colorKrona3, colorPen, width){
+	var width;
+	var colorKrona1,colorPen,colorKrona2,colorKrona3;
+	var krona1,krona2,krona3,pen;
+	var obj1obj2,obj3,obj4;
+	
+	this.krona1=krona1;
+	this.krona2=krona2;
+	this.krona3=krona3;
+	this.pen=pen;
+	
+	this.colorKrona3=colorKrona3;
+	this.colorKrona2=colorKrona2;
+	this.colorKrona1=colorKrona1;
+	this.colorPen=colorPen;
+	this.width=width;
+	
+this.draw=function(){
+	obj1=document.getElementById(this.krona1);
+	obj2=document.getElementById(this.krona2);
+	obj3=document.getElementById(this.krona3);
+	obj4=document.getElementById(this.pen);
+	
+	obj1.setAttribute("stroke",colorKrona1);
+	obj2.setAttribute("stroke",colorKrona2);
+	obj3.setAttribute("stroke",colorKrona3);
+	obj4.setAttribute("stroke",colorPen);
+	
+	obj1.setAttribute("stroke-width",width);
+	obj2.setAttribute("stroke-width",width);
+	obj3.setAttribute("stroke-width",width);
+	obj4.setAttribute("stroke-width",width);
+}
+}
+
+function Main(){
+	var n=new SVGPath("krona1","krona2","krona3","pen","green","red","blue","black","7");
+	n.draw();
+}
+</script>
+<svg width="2000" height="500" xmlns="http://www.w3.org/2000/svg"
+
+      xmlns:xlink="http://www.w3.org/1999/xlink">
+
+		<path id="krona1" d="
+		M300,50
+		L260,70
+		M300,50
+		L340,70
+		M340,70
+		A60,20 0 0,1 340,90
+		M260,70
+		A60,20 0 0,0 260,90
+		M260, 90
+		L280,90
+		M340,90
+		L320,90"
+		stroke="green" fill=none 
+		
+		d="M10, 10 L20,20"/>
+
+		<path id="krona2" d="
+		M280,90
+		L240,110
+		M240,110
+		A60,20 0 0,0 240,130
+		M240,130
+		L270,130
+
+		M320,90
+		L360,110
+		M360,110
+		A60,20 0 0,1 360,130
+		M360,130
+		L330,130"
+
+		stroke="green" fill=none />
+
+		<path id="krona3" d="
+		M270,130
+		L230,150
+		M230,150
+		A60,20 0 0,0 230,170
+		M230,170
+		L300,170
+
+		M330,130
+		L370,150
+		M370,150
+		A60,20 0 0,1 370,170
+		M370,170
+		L300,170
+		"
+		stroke="green" fill=none />
+
+		//пеньок
+		<path id= "pen" d="
+		M290,170
+		L290,180
+		M310,170
+		L310,180 
+		M310,180
+		L290,180
+		"
+		stroke="brown" fill=none />	
+</svg>
+
+</body>
+</html>
