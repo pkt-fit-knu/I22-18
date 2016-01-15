@@ -1,0 +1,102 @@
+<html>
+<style type="text/css">
+body {
+  background:black;
+}
+</style>
+<body>
+
+<input type=button value='Start' onclick='Main()' />
+
+<img id="img1" src="http://www.clker.com/cliparts/Q/l/D/8/k/m/red-circle-icon-hi.png" alt="img1" style="width:20px;height:20px;">
+<img id="img2" src="http://www.clker.com/cliparts/F/n/c/M/T/u/yellow-circle-md.png" alt="img2" style="width:20px;height:20px;">
+<img id="img3" src="http://www.clker.com/cliparts/7/j/k/w/4/s/blue-circle-md.png" alt="img3" style="width:20px;height:20px;">
+<img id="img4" src="http://www.clker.com/cliparts/z/l/v/A/K/R/green-circle-md.png" alt="img4" style="width:20px;height:20px;">
+
+<script type="text/javascript">
+
+	function Animation(img1,img2,img3,img4){
+	
+var imgObj1=null, imgObj2=null, imgObj3=null, imgObj4=null,ID;
+var currentAngle=0, Angle=59.8, Angle2=30, Angle3=26.85;
+var Count=0;
+	this.img1=img1;
+	this.img2=img2;
+	this.img3=img3;
+	this.img4=img4;
+
+	this.start=function() {
+
+	imgObj1=document.getElementById(img1);
+	imgObj2=document.getElementById(img2);
+	imgObj3=document.getElementById(img3);
+	imgObj4=document.getElementById(img4);
+	
+	imgObj1.style.left='633px';
+	imgObj1.style.top='314px';
+	imgObj1.style.position='absolute';
+	
+	imgObj2.style.left='653px';
+	imgObj2.style.top='334px';
+	imgObj2.style.position='absolute';
+	
+	imgObj3.style.left='633px';
+	imgObj3.style.top='334px';
+	imgObj3.style.position='absolute';
+	
+	imgObj4.style.left='653px';
+	imgObj4.style.top='314px';
+	imgObj4.style.position='absolute';
+	
+	imgObj1.style.visibility='visible';
+	
+	ID=setInterval(this.Move,60);
+	 
+	}
+	
+	this.Move=function()
+	{
+	
+		imgObj4.style.left=653+100*Math.sin(currentAngle)-100+'px';
+		imgObj4.style.top=314+Math.cos(currentAngle)*40+'px';
+		
+		imgObj1.style.left=633+100*Math.sin(Angle)+100+'px';
+		imgObj1.style.top=314+Math.cos(Angle)*40+'px';
+		
+		if(parseFloat(imgObj4.style.left)>652 & parseFloat(imgObj1.style.left)<634 & parseFloat(imgObj2.style.left)>652 & parseFloat(imgObj3.style.left)<634)
+		{
+		Count++;
+			if(Count==3)
+			{
+			stop();
+			return;
+			}
+		}
+		
+		imgObj2.style.left=653+40*Math.sin(Angle2)+'px';
+		imgObj2.style.top=334+Math.cos(Angle2)*100-100+'px';
+		
+		imgObj3.style.left=633+40*Math.sin(Angle3)+'px';
+		imgObj3.style.top=334+Math.cos(Angle3)*100+100+'px';
+		
+		currentAngle=currentAngle+0.1 ;
+		Angle=Angle+0.1;
+		Angle2=Angle2+0.1;
+		Angle3=Angle3+0.1;
+	}
+
+
+	function stop()
+		{
+		clearInterval(ID);
+		}
+}	
+
+	function Main(){
+		var n = new Animation('img1','img2','img3','img4');
+		n.start();
+	}
+
+</script>
+</body>
+</html>
