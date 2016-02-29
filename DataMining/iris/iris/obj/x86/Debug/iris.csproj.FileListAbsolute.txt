@@ -1,0 +1,5 @@
+C:\Users\oleg\Desktop\iris\iris\bin\Debug\iris.exe
+C:\Users\oleg\Desktop\iris\iris\bin\Debug\iris.pdb
+C:\Users\oleg\Desktop\iris\iris\obj\x86\Debug\iris.exe
+C:\Users\oleg\Desktop\iris\iris\obj\x86\Debug\iris.pdb
+C:\Users\oleg\Desktop\iris\iris\obj\x86\Debug\iris.csprojResolveAssemblyReference.cache
