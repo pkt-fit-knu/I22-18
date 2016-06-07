@@ -1,0 +1,9 @@
+c:\users\work\documents\visual studio 2012\Projects\KNN\KNN\bin\Debug\KNN.exe.config
+c:\users\work\documents\visual studio 2012\Projects\KNN\KNN\bin\Debug\KNN.exe
+c:\users\work\documents\visual studio 2012\Projects\KNN\KNN\bin\Debug\KNN.pdb
+c:\users\work\documents\visual studio 2012\Projects\KNN\KNN\obj\Debug\KNN.csprojResolveAssemblyReference.cache
+c:\users\work\documents\visual studio 2012\Projects\KNN\KNN\obj\Debug\KNN.exe
+c:\users\work\documents\visual studio 2012\Projects\KNN\KNN\obj\Debug\KNN.pdb
+C:\Users\oleg\Desktop\KNN\KNN\bin\Debug\KNN.exe.config
+C:\Users\oleg\Desktop\KNN\KNN\obj\Debug\KNN.exe
+C:\Users\oleg\Desktop\KNN\KNN\obj\Debug\KNN.pdb
